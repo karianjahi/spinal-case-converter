@@ -1,8 +1,9 @@
-// This function is basically a showcase of how lookahead regex works
+// This function is basically a showcase of how positive lookahead regex works
+// We want to split a word using regex just before each capital letter (except the first one) -- positive lookahead
 const spinalCase = (aString) => {
     // we need to split before each capital letter (except the first one)
-    const regex = /(?=[A-Z])/;
-    const splits = aString.split(regex);
+    const regex = /(?=[A-Z])/; // means match a position right before a capital letter
+    const splits = aString.split(regex); // split at the current position 
     let allList = [];
     let finalString = [];
     for (let aSplit of splits) {
